@@ -1,0 +1,36 @@
+
+<% if(vacs.length>0) {%>
+  <% vacs.forEach(vac=>{ %> 
+  
+     <div style="display:flex; display:inline-block;padding:30px;" class="cards">
+
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/<%= vac.proprietor %>_pictureOne.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">
+            Price:US$<%= vac.price %> <br>
+            Gender:<%= vac.gender %> <br>
+            Beds:<%= vac.number %>
+
+
+          </p>
+          <div style="display:inline;" class="btn">
+            <form action="/viewvac" method="post">
+              <input type="hidden" name="vacid" value="<%= vac.id%>">
+              <button class="btn btn-primary">View</button>
+              <a href="https://wa.me/<%= vac.phoneNumber %>" class="btn btn-primary">Contact</a>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+  
+      
+     </div>
+  
+
+ <% })%>
+
+ <%}%>

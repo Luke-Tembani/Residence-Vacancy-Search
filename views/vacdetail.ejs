@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Vacancy Details</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">	
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800" rel="stylesheet"> 		
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/core.css">
+        <link rel="stylesheet" href="css/shortcode/shortcodes.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">  
+        <link rel="stylesheet" href="css/style-customizer.css">
+    	<link href="#" data-style="styles" rel="stylesheet">  
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>    
+    </head>  
+    <body>
+        
+                     <!--Start of topbar-->
+                <%- include('./partials/home/topbar.ejs') %>
+                <!--End of topbar-->
+                             
+                <!--Start of Header-->
+                <%- include('./partials/home/menu.ejs') %>
+                <!--End of Header--> 
+                </header>
+                <!-- End of Header Area -->
+
+                <!--Start of Banner Area-->
+                <div style="background-color: aliceblue;" class="ptb-30 ">
+                	<div class="container">
+                		<div class="row">
+                			<div class="col-md-12">
+                				<div class="banner-title text-center">
+                					<h1 style="color: #000;" class="text-uppercase text-white">Vacancy Details</h1>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+
+                <div class="vacdetail">
+                  
+<% if(vac.length>0) {%>
+  <% vac.forEach(vac=>{ %> 
+  
+     <div style="padding:30px;" class="cards">
+      <img class="card-img-top" src="/<%= vac.proprietor %>_pictureTwo.png" alt="Card image cap">
+
+      <div class="card" style="width: 20rem;">
+ 
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">
+
+            Proprietor Name:<%= vac.proprietor %> <br>
+            Price:US$<%= vac.price %> <br>
+            Gender:<%= vac.gender %> <br>
+            Beds:<%= vac.number %> <br>
+            Wifi:<%= vac.wifi %> <br>
+            Geyser: <%= vac.geyser %> <br>
+            Solar: <%= vac.solar %> <br>
+            Fridge: <%= vac.fridge %> <br>
+            Gas: <%= vac.gas %> <br>
+          </p>
+          <p><b style="font-weight: bold;">NB!</b> Blank Amenities are unvailable</p>
+          <div style="display: inline;" class="btn">
+           <form action="/apply" method="post">
+             <input type="hidden" name="id" value="<%= vac.id %>">
+            <button class="btn btn-primary">Apply</button>
+            <a href="https://wa.me/<%= vac.phoneNumber %>" class="btn btn-primary">Contact</a>
+           </form>
+            
+          </div>
+
+        </div>
+      </div>
+  
+      
+     </div>
+  
+
+ <% })%>
+
+ <%}%>
+                </div>
+  
+
+                
+
+                <!--End of Banner Area-->
+                <!--Start of Footer Widget-area-->
+                <%- include('./partials/home/footer.ejs') %>
+                <!--End of Footer-->
+          
+        
+            
+            
+        </div>    
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>		
+        <script src="js/bootstrap.min.js"></script>	
+        <script src="js/owl.carousel.min.js"></script>    
+		<script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+		<script src="lib/nivo-slider/home.js" type="text/javascript"></script>	
+        <script src="js/waypoints.min.js"></script>		
+        <script src="js/jquery.mb.YTPlayer.js"></script>		
+        <script src="js/ajax-mail.js"></script>			
+        <script src="js/jquery.ajaxchimp.min.js"></script>		
+        <script src="js/slick.min.js"></script>	
+        <script src="js/style-customizer.js"></script>	
+        <script src="js/plugins.js"></script>	
+        <script src="js/main.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,37 @@
+
+<% if(apps.length>0) {%>
+    <% apps.forEach(vac=>{ %> 
+    
+       <div style="display:flex; display:inline-block;padding:30px;" class="cards">
+  
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="/<%= vac.proprietor %>_pictureTwo.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Price:<%= vac.price %> <br>
+              PaymentStatus:<%= vac.paymentStatus %> <br>
+              Wifi:<%= vac.wifi %> <br>
+              Geyser: <%= vac.geyser %> <br>
+              Solar: <%= vac.solar %> <br>
+              Fridge: <%= vac.fridge %> <br>
+              Gas: <%= vac.gas %> <br>
+            </p>
+            <div  style="padding: 10px;;display:inline;" class="btn">
+              <form action="/cancelApplication" method="post">
+                <input type="hidden" name="id" value="<%= vac.id%>">
+                <button class="btn btn-primary">Cancel</button><br>
+              </form>
+  
+            </div>
+  
+          </div>
+        </div>
+    
+        
+       </div>
+    
+  
+   <% })%>
+  
+   <%}%>

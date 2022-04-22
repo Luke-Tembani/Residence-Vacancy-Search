@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Files</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+      <div class="container">
+          <h1 class="text-center">Upload Documents</h1>
+          <form action="/uploadfile" id="post" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="file1">National ID</label>
+              <input type="file" name="identification" id="" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="file2">Proof Of Residence</label>
+                <input type="file" name="proofOfResidence" id="" required class="form-control">
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-danger btn-block">
+                      Upload Files and Request Approval
+                  </button>
+              </div>
+        </form>
+      </div>
+</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>

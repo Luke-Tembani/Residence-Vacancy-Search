@@ -1,0 +1,183 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>About</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">	
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800" rel="stylesheet"> 		
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/core.css">
+        <link rel="stylesheet" href="css/shortcode/shortcodes.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/responsive.css">  
+        <link rel="stylesheet" href="css/style-customizer.css">
+    	<link href="#" data-style="styles" rel="stylesheet">  
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>    
+    </head>  
+    <body>
+
+        <!--Header-->
+
+                        <!--Start of topbar-->
+                        <%- include('./partials/home/topbar.ejs') %>
+                        <!--End of topbar-->
+                                     
+                        <!--Start of Header-->
+                        <%- include('./partials/home/menu.ejs') %>
+                        <!--End of Header-->
+
+        <!--Header end-->
+  
+                <!--Start of Banner Area-->
+                <div class="banner-area bg-2 bg-overlay-2 ptb-165">
+                	<div class="container">
+                		<div class="row">
+                			<div class="col-md-12">
+                				<div class="banner-title text-center">
+                					<h1 class="text-uppercase text-white">Contact</h1>
+                				</div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+                <!--End of Banner Area-->
+				<!--Start of Google Map-->
+				<div class="google-map-area pt-120">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<!--Start of Map Section-->
+								<div id="contacts" class="map-area">
+									<div id="googleMap" style="width:100%;height:485px;filter: grayscale(100%);-webkit-filter: grayscale(100%);"></div>
+								<!--End of Map Section-->
+								</div>
+								<div class="contact-information">
+									<div class="single-contact-info"> 
+										<div class="pull_left contents ml-8"> 
+											<img src="images/icons/c-map.png" alt="">
+											<div class="info-text pl-40">
+												<span class="block mb-7">123 Ganges</span>
+												<span class="block mb-7">Belvedere Harare</span>
+											</div>
+										</div>
+									</div>
+									<div class="single-contact-info"> 
+										<div class="contents"> 
+											<img src="images/icons/c-phone.png" alt="">
+											<div class="info-text pl-40">
+												<span class="block mb-7">Telephone : +263 774 975 876</span>
+												<span class="block mb-7">Telephone : +263 774 975 876</span>
+											</div>
+										</div>
+									</div>
+									<div class="single-contact-info"> 
+										<div class="pull_right contents mr-8"> 
+											<img src="images/icons/c-globe.png" alt="">
+											<div class="info-text pl-40">
+												<span class="block mb-7">Email : info@vacancysearch.co.zw</span>
+												<span class="block mb-7">Web : www.vacancysearch.co.zw</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End of Google Map-->
+
+                <!--Start Contact Form Area-->
+                <div class="contact-form-area fix ptb-120">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2">
+                				<h4 class="details-title text-center mb-43">Leave a Message</h4>
+								<form id="contact-form" action="mail.php" method="post">
+									<input type="text" name="name" class="mb-22" placeholder="Your name">
+									<input type="text" name="email" class="mb-22" placeholder="Email here">
+									<textarea name="message" cols="30" rows="10" placeholder="Write here"></textarea>
+									<div class="col-10 fix text-center">
+										<button type="submit" class="button submit-btn lemon mt-35">SUBMIT</button>
+									</div>
+									<p class="form-messege"></p>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!--End of Contact Form Area-->
+          
+                <!--Footer-->
+                <%- include('./partials/home/footer.ejs') %>
+                <!--Footer end-->
+        
+        <!-- jquery latest version
+		========================================================= -->	
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>
+        
+        <!-- Bootstrap framework js
+		========================================================= -->			
+        <script src="js/bootstrap.min.js"></script>
+        
+        <!-- Owl Carousel js
+		========================================================= -->		
+        <script src="js/owl.carousel.min.js"></script>
+        
+        <!-- nivo slider js
+		========================================================= -->	    
+		<script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+		<script src="lib/nivo-slider/home.js" type="text/javascript"></script>
+        
+        <!-- Waypoint Js
+		========================================================= -->	
+        <script src="js/waypoints.min.js"></script>
+        
+        <!-- Google Map js
+		============================================ --> 		
+        
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSLSFRa0DyBj9VGzT7GM6SFbSMcG0YNBM "></script>
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script>
+			function initialize() {
+			  var mapOptions = {
+				zoom: 15,
+				scrollwheel: false,
+				center: new google.maps.LatLng(23.763494, 90.432226)
+			  };
+
+			  var map = new google.maps.Map(document.getElementById('googleMap'),
+				  mapOptions);
+
+
+			  var marker = new google.maps.Marker({
+				position: map.getCenter(),
+				animation:google.maps.Animation.BOUNCE,
+				icon: 'images/map-marker.png',
+				map: map
+			  });
+                
+			}
+                
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+        
+        <script src="js/vendor/jquery-1.12.4.min.js"></script>		
+        <script src="js/bootstrap.min.js"></script>	
+        <script src="js/owl.carousel.min.js"></script>    
+		<script src="lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+		<script src="lib/nivo-slider/home.js" type="text/javascript"></script>	
+        <script src="js/waypoints.min.js"></script>		
+        <script src="js/jquery.mb.YTPlayer.js"></script>		
+        <script src="js/ajax-mail.js"></script>			
+        <script src="js/jquery.ajaxchimp.min.js"></script>		
+        <script src="js/slick.min.js"></script>	
+        <script src="js/style-customizer.js"></script>	
+        <script src="js/plugins.js"></script>	
+        <script src="js/main.js"></script>
+        
+    </body>
+</html>

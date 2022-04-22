@@ -1,0 +1,49 @@
+
+
+<div style="font-size: x-large;color: #ff0000;">
+ <center> <%= Message %></center>
+</div>
+<% if(offers.length>0) {%>
+    <% offers.forEach(offer=>{ %> 
+    
+       <div style="display:flex; display:inline-block;padding:30px;" class="cards">
+  
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="/<%= offer.proprietor %>_pictureTwo.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Price:<%= offer.price %> <br>
+              Wifi:<%= offer.wifi %> <br>
+              Geyser: <%= offer.geyser %> <br>
+              Solar: <%= offer.solar %> <br>
+              Fridge: <%= offer.fridge %> <br>
+              Gas: <%= offer.gas %> <br>
+              Proprietor: <%= offer.proprietor %> <br>
+              Contact: <%= offer.phoneNumber %> <br>
+            </p>
+            <div style="display:inline;" class="btn">
+              <a class="btn btn-primary" href="/acceptoffer">Accept and Pay</a>
+
+              <br>
+
+              <form action="/denyoffer" method="post">
+                <input type="hidden" name="vacid" value="<%= offer.id %>">
+                <input type="submit" class="btn btn-primary" value="Deny">
+              </form>
+    
+
+            </div>
+
+           
+
+          </div>
+        </div>
+    
+        
+       </div>
+    
+  
+   <% })%>
+  
+   <%}%>

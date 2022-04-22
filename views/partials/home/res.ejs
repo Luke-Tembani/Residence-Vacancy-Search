@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<h2><%= Message %></h2>
+<br>
+<% vacs.forEach(function(vac){ %>
+
+    <div style="display:flex; display:inline-block;padding:30px;" class="cards">
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="/<%= vac.proprietor %>_pictureTwo.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text">
+              Price:<%= vac.price %> <br>
+              Gender:<%= vac.gender %> <br>
+              Beds:<%= vac.number %>
+  
+  
+            </p>
+            <div style="display: inline;" class="btn">
+              <a href="#" class="btn btn-primary">View</a>
+              <a href="https://wa.me/<%= vac.phoneNumber %>" class="btn btn-primary">Contact</a>
+            </div>
+  
+          </div>
+        </div>
+    
+        
+       </div>
+
+
+    
+<% }) %>
+
+<br>
+<br>

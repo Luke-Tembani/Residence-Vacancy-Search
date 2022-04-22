@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>propancies</title>
+</head>
+<body>
+
+    <!--NAV-->
+
+    <%- include('./partials/nav.ejs') %>
+
+
+    <!--Sidebar-->
+
+    <%- include('./partials/sidebar.ejs') %>
+
+    <!--Proprietors Table-->
+    
+    <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Proprietors</h4>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <td>Full Name</td>
+                <td>Username</td>
+                <td>Address</td>
+                <td>Phone Number</td>
+                <td>Email</td>
+
+              </tr>
+            </thead>
+            <tbody>
+              <% if(proprietors.length>0) {%>
+                <%proprietors.forEach(prop=>{ %> 
+
+                    <tr>
+                        <td><%=prop.fullname%></td>
+                        <td><%=prop.username%></td>
+                        <td><%=prop.address%></td>
+                        <td><%=prop.phoneNumber%></td>
+                        <td><%=prop.email%></td>
+                        <form action="/propvacs" method="post">
+                          <td>
+                            <input name="username" type="hidden" value="<%= prop.username %>">
+                            <input type="submit" value="View Vacancies">
+                          </td>
+                        </form>
+
+                        
+                    </tr>                
+
+               <% })%>
+
+               <%}%>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+    
+    
+</body>
+ <!--JS SCRIPTS-->
+
+ <script src="/vendor.bundle.base.js"></script>
+ <script src="/Chart.min.js"></script>
+ <script src="/jquery.cookie.js" type="text/javascript"></script>
+ <script src="/off-canvas.js"></script>
+ <script src="/hoverable-collapse.js"></script>
+ <script src="/misc.js"></script>
+ <script src="/dashboard.js"></script>
+ <script src="/todolist.js"></script>
+</html>

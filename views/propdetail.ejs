@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Proprietor</title>
+</head>
+<body>
+
+    <!--Nav-->
+
+    <%- include('./partials/nav.ejs') %>
+
+    <!--Sidebar-->
+
+    <%- include('./partials/sidebar.ejs') %>
+
+    <!--Manage Proprietor-->
+
+    <% if(props.length >0) { %>
+        <% props.forEach(prop=>{ %>
+
+         
+
+    <div class="row">
+        <div class="col-lg-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              </p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Proprietor Name</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Email</th>
+                    <th>Verification Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                        
+                          
+                   
+                    <td><%=prop.fullname%></td>
+                    <td><%=prop.address%></td>
+                    <td><%=prop.phoneNumber%></td>
+                    <td><%=prop.email%></td>
+                    <td><%=prop.status%></td>
+  
+                   
+                    
+                    
+                  </tr>
+
+                </tbody>
+              </table>
+
+              <div style="padding: 20px;" class="propfiles">
+                <h6>National ID</h6>
+                <img style="height: auto; width: 70%;"  src="/<%= prop.username%>_identification.png" alt="id" id="id">
+                
+
+                <h6>Proof Of Residence</h6>
+                <img style="height: auto; width: 70%;" src="/<%= prop.username%>_proofOfResidence.png" alt="id">
+              
+              </div>
+              <br>
+              <label class="badge badge-success"><%= Message %></label>                   
+              <div class="mt-3">
+                <form action="/verify/<%= prop.id %>" method="post">
+                  <input class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" value="Verify" type="submit">
+                </form>
+                <br>
+               
+                <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="/delete/<%= prop.id %>">Delete</a><br><br>
+             
+
+               
+            </div>
+            </div>
+          </div>
+         
+        </div>
+
+
+        <%})%>
+        <%}%>
+
+
+
+   
+
+  
+
+    
+
+
+</body>
+
+
+</html>

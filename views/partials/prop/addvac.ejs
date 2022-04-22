@@ -1,0 +1,38 @@
+<div class="row">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-description">Enter Vacancy Details</p>
+          <form action="/addVacant" enctype="multipart/form-data" method="post" class="forms-sample">
+            <div class="form-group">
+              <label for="number">Number of Students</label>
+              <input name="number" type="text" class="form-control" id="number" placeholder="eg 3 in 1 room">
+            </div>
+            <div class="form-group">
+              <label for="gender">Preferred Gender</label>
+              <input name="gender" type="text" id="gender" class="form-control" name="gender" placeholder="Male or Female">
+            </div>
+            <div class="form-group">
+              <label for="gender">Rental Price</label>
+              <input name="price" type="text" id="rent" class="form-control" name="gender" placeholder="$70 per month">
+            </div>
+            <div class=".form-check-{color}">
+                <h6>Available Amenities</h6>
+                <label><input name="wifi" type="checkbox">Wifi</label>
+                <label><input name="geyser" type="checkbox">Geyser</label>
+                <label><input name="fridge" type="checkbox">Refridgerator</label>
+                <label><input name="solar" type="checkbox">Solar System</label>
+                <label><input name="gas" type="checkbox">Gas Stove</label>
+            </div>
+            <div class="form-group">
+              <br> <br>
+              <label for="number">Add Pictures</label>
+              <input type="file" name="pictureOne"  class="form-control">
+              <input type="file" name="pictureTwo"  class="form-control">
+            </div>
+            <button type="submit" class="btn btn-gradient-primary me-2">Add</button>
+           <label class="badge badge-success"><%= Result %></label>
+           <label class="badge badge-danger"><%= errmsg %></label>
+          
+          </form>
+        </div>
+      </div>

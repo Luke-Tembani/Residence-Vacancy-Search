@@ -1,0 +1,46 @@
+
+<% vacs.forEach(function(data){ %>
+
+    <div id="abt" class="about">
+    <div class="about-area mt-120 pb-90 demo_pictureOne.png">
+       
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+        <div class="section-title mb-38 mt-31">
+         <div>
+           
+            <h2 class=""><span class="">Proprietor: <%=data.proprietor%></span></h2>
+            <br>
+            <h2 class=""><span class="">Required Students: <%=data.number%></span></h2>
+            <br>
+            <h2 class=""><span class="">Preferred Gender: <%=data.gender%></span></h2>
+            <br>
+            <h2 class=""><span class="">Price: <%=data.price%></span></h2>
+            <br>
+            <h2 class=""><span class="">Wifi: <%=data.wifi%></span></h2>
+            <br>
+            <h2 class=""><span class="">Geyser: <%=data.geyser%></span></h2>
+            <br>
+            <h2 class=""><span class="">Solar: <%=data.solar%></span></h2>
+            <br>
+            <h2 class=""><span class="">Fridge: <%=data.fridge%></span></h2>
+            <br>
+            <h2 class=""><span class="">Gas: <%=data.gas%></span></h2>
+            <br>
+            <a class="button search_price lemon pull_left mr-6" href="/apply/<%= data.id %>">Apply</a>
+            <a class="button search_price lemon pull_left ml-30 mr-6" href="https://wa.me/<%= data.phoneNumber %>">Message</a> 
+         </div>     
+        </div>
+   
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+</div>
+    
+<% }) %>
+
+<br>
+<br>

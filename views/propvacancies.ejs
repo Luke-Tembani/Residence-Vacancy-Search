@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/vendor.bundle.base.css">
+    <link rel="stylesheet" href="/style1.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancies</title>
+</head>
+<body>
+
+    <!--Nav-->
+
+    <%- include('./partials/nav.ejs') %>
+
+    <!--Sidebar-->
+
+    <%- include('./partials/prop/sidebar.ejs') %>
+
+ 
+<% if(vacs.length>0) {%>
+  <% vacs.forEach(vac=>{ %> 
+  
+     <div style="display:flex; display:inline-block;padding:30px;" class="cards">
+
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/<%= vac.proprietor %>_pictureOne.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">
+            Price:<%= vac.price %> <br>
+            Gender:<%= vac.gender %> <br>
+            Beds:<%= vac.number %> <br>
+            Wifi:<%= vac.wifi %> <br>
+            Geyser: <%= vac.geyser %> <br>
+            Solar: <%= vac.solar %> <br>
+            Fridge: <%= vac.fridge %> <br>
+            Gas: <%= vac.gas %> <br>
+
+
+          </p>
+          <div style="display:inline;" class="btn">
+            
+            <form action="/deletevac" method="post">
+              <input type="hidden" name="vacid" value="<%= vac.id%>">
+              <button class="btn btn-primary">DELETE VACANCY</button>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+  
+      
+     </div>
+  
+
+ <% })%>
+
+ <%}%>
+
+
+
+</body>
+<script src="/vendor.bundle.base.js"></script>
+<script src="/Chart.min.js"></script>
+<script src="/jquery.cookie.js" type="text/javascript"></script>
+<script src="/off-canvas.js"></script>
+<script src="/hoverable-collapse.js"></script>
+<script src="/misc.js"></script>
+<script src="/dashboard.js"></script>
+<script src="/todolist.js"></script>
+
+
+</html>
