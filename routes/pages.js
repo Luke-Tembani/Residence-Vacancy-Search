@@ -59,6 +59,17 @@ router.post('/apply', (req,res)=>{
 })
 
 
+//success
+router.get('/success',(req,res)=>{
+    res.send("SUCCESSFULLY PAID");
+})
+
+//cancelled
+router.get('/cancelled',(req,res)=>{
+    res.send("TRANSACTION CANCELLED");
+})
+
+
 //View Applications
 
 router.get('/viewApplications',(req,res)=>{
@@ -173,14 +184,16 @@ router.get('/myApplications',(req,res)=>{
 //Cancel application
 router.post('/cancelApplication',(req,res)=>{
     const id = req.body.id;
-    
-    db.query('DELETE FROM applications WHERE id =?',[id],async(error)=>{
+
+    db.query('UPDATE vacancies SET number = number + 1 WHERE id = ?',[id],async(error)=>{
         if(error) throw error;
 
-        res.redirect('/myApplications');
+        db.query('DELETE FROM applications WHERE vacancyId =?',[id],async(error)=>{
+            if(error) throw error;
+    
+            res.redirect('/myApplications');
+        })
     })
-
-
 })
 
 //DENY VACANCY APPLICATION
@@ -255,7 +268,9 @@ router.post('/oneRegistration',(req,res)=>{
 
                         let hashedPassword = bcrypt.hashSync(password,10);
 
-                        db.query('INSERT INTO proprietors SET?',{fullname,address,phoneNumber,email,password:hashedPassword,username,proprietor},async(error,result)=>{
+                        db.query('INSERT INTO proprietors SET?',{fullname,address,phoneNumber,email,password:hashedPassword,username
+                        
+                        },async(error,result)=>{
                             if(error) throw error
 
                             res.render('studentlogin',{Message:'Successfully Registered,Login Now!'})

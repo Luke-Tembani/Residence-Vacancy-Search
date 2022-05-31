@@ -7,5 +7,7 @@ create table IF NOT EXISTS `vacancies`(
     `geyser`varchar(50) DEFAULT 'off',
     `solar`varchar(50) DEFAULT 'off',
     `fridge`varchar(50) DEFAULT 'off',
+    `proprietor` varchar(100),
+    `phoneNumber` varchar(100),
     `gas` varchar(50) DEFAULT 'off');
 
